@@ -58,4 +58,8 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+config :phoenix_todo_api, PhoenixTodoApi.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  database: "phoenix_todo_api_prod",
+  pool_size: 20
