@@ -19,8 +19,8 @@ defmodule PhoenixTodoApi.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PhoenixTodoApi do
-  #   pipe_through :api
-  # end
+  scope "/api", PhoenixTodoApi do
+    pipe_through :api
+    resources "/todos", TodoController, except: [:new, :edit]
+  end
 end
