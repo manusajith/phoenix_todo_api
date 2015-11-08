@@ -1,11 +1,8 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     PhoenixTodoApi.Repo.insert!(%SomeModel{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias PhoenixTodoApi.Repo
+alias PhoenixTodoApi.Todo
+
+
+Repo.insert!(%Todo{title: "Create json api server using pheonix", is_completed: true})
+Repo.insert!(%Todo{title: "Create client app using emberjs", is_completed: false})
+Repo.insert!(%Todo{title: "Glue both client and server apps", is_completed: false})
+Repo.insert!(%Todo{title: "Host and ensure the app works", is_completed: false})
